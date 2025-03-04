@@ -23,6 +23,6 @@ async def login(login_data: LoginData):
 
 @router.post("/signup", response_model=Dict)
 async def signup(signup_data: SignupData):
-    # Convert SignupData to User model
+
     user = User(**signup_data.model_dump())
     return await create_user(user)

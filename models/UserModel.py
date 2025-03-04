@@ -21,7 +21,6 @@ class User(BaseModel):
     
     @classmethod
     def verify_password(cls, plain_password: str, hashed_password: str) -> bool:
-        # Verify the password
         return bcrypt.checkpw(
             plain_password.encode('utf-8'),
             hashed_password.encode('utf-8')
